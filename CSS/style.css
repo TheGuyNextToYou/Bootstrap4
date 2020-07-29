@@ -31,3 +31,7 @@ body {
 .navbar-dark{
     background-color: #512DA8;
 }
+#butt{
+    margin-right: 10px;
+    border-radius: 8px;
+}
