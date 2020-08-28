@@ -16,6 +16,31 @@
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v8.0&appId=741737836386151&autoLogAppEvents=1" nonce="xqJnLWfY"></script>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '{741737836386151}',
+                cookie     : true,
+                xfbml      : true,
+                version    : '{v8.0}'
+            });
+                
+            FB.AppEvents.logPageView();   
+            
+        };
+    
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+       
+
+    </script>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
@@ -69,7 +94,8 @@
                         </div>
                         <div class="form-row">
                             <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                            <div class="fb-login-button ml-1" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>        
                         </div>
                     </form>
                 </div>
@@ -308,32 +334,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#mycarousel').carousel( { interval: 2000 } );
-            $("#carouselbutton").click(function(){
-                if ($("#carouselbutton").children("span").hasClass('fa-pause')) {
-                    $("#mycarousel").carousel('pause');
-                    $("#carouselbutton").children("span").removeClass('fa-pause');
-                    $("#carouselbutton").children("span").addClass('fa-play');
-                }
-                else if ($("#carouselbutton").children("span").hasClass('fa-play')){
-                    $("#mycarousel").carousel('cycle');
-                    $("#carouselbutton").children("span").removeClass('fa-play');
-                    $("#carouselbutton").children("span").addClass('fa-pause');                    
-                }
-            });
-            // 
-            //login trigger fucntion
-            $('#loginbutton').click(function(){
-                $('#loginModal').modal('show');
-            })
-            //reserve table trigger function
-            $('#reservetablebutton').click(function(){
-                $('#reservetable').modal('show');
-            })
-        });
-    </script>
+    <script src="JS/scripts.js"></script>
 </body>
 
 </html>
